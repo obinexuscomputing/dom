@@ -1,0 +1,22 @@
+{
+  "name": "@obinexuscomputing/dom",
+  "version": "1.0.0",
+  "description": "DOM utilities for parsing and manipulation",
+  "main": "index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "keywords": [
+    "dom",
+    "parser",
+    "manipulation",
+    "@obinexuscomputing/dom"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@obinexuscomputing/dom-asm": "^1.0.0"
+  }
+}
