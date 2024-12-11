@@ -4,7 +4,7 @@
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "declaration": true,
-    "declarationDir": "./dist/types", // Place declarations in dist/types
+    "declarationDir": "./dist/", // Place declarations in dist/
     "sourceMap": true,
     "strict": true,
     "moduleResolution": "node",

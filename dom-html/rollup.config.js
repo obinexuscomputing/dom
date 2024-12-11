@@ -27,7 +27,7 @@ export default [
       typescript({
         tsconfig: './tsconfig.json', // Path to TypeScript config
         declaration: true, // Generate type declarations
-        declarationDir: './dist/types', // Output directory for declarations
+        declarationDir: './dist/', // Output directory for declarations
       }),
       isProd && terser(), // Minify in production
     ].filter(Boolean),
