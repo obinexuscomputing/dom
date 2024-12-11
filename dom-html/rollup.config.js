@@ -6,7 +6,7 @@ import dts from 'rollup-plugin-dts';
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const config = [
+export default [
   {
     input: 'src/index.ts',
     output: [
@@ -27,16 +27,14 @@ const config = [
       typescript({
         tsconfig: './tsconfig.json', // Path to TypeScript config
         declaration: true, // Generate type declarations
-        declarationDir: './dist', // Must align with Rollup output paths
+        declarationDir: './dist/types', // Output directory for declarations
       }),
       isProd && terser(), // Minify in production
     ].filter(Boolean),
   },
   {
-    input: 'dist/index.d.ts', // Adjusted path for type declaration bundling
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    input: 'dist/types/index.d.ts', // Adjust input to match the generated declaration
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }], // Bundle type declarations
     plugins: [dts()],
   },
 ];
-
-export default config;

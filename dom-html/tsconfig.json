@@ -4,7 +4,7 @@
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "declaration": true,
-    "declarationDir": "./dist", // Match Rollup config
+    "declarationDir": "./dist/types", // Place declarations in dist/types
     "sourceMap": true,
     "strict": true,
     "moduleResolution": "node",

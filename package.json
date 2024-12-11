@@ -42,5 +42,8 @@
     "dom-asm",
     "dom-css",
     "dom-html"
-  ]
+  ],
+  "devDependencies": {
+    "rollup-plugin-dts": "^6.1.1"
+  }
 }
