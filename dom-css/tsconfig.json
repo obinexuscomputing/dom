@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "target": "es2018",                      // Specifies the output language level
+      "module": "esnext",                      // Use ESNext module resolution
+      "lib": ["dom", "esnext"],                // Include DOM and latest ECMAScript features
+      "declaration": true,                     // Generate type declaration files
+      "declarationDir": "./dist/types",        // Output directory for declaration files
+      "sourceMap": true,                       // Generate source maps
+      "strict": true,                          // Enable all strict type-checking options
+      "moduleResolution": "node",              // Node module resolution strategy
+      "esModuleInterop": true,                 // Allow ES module interop
+      "skipLibCheck": true,                    // Skip type checks on library files
+      "forceConsistentCasingInFileNames": true, // Enforce consistent casing in import paths
+      "resolveJsonModule": true,               // Support importing JSON files
+      "allowSyntheticDefaultImports": true,    // Allow synthetic default imports
+      "noUnusedLocals": true,                  // Report unused local variables
+      "noUnusedParameters": true,              // Report unused parameters
+      "noImplicitReturns": true,               // Enforce explicit returns in functions
+      "noFallthroughCasesInSwitch": true,      // Disallow fallthrough cases in switch statements
+      "outDir": "./dist",                      // Output directory for compiled files
+      "baseUrl": ".",                          // Base directory for resolving non-relative module names
+      "paths": {                               // Aliases for module paths
+        "*": ["src/*", "node_modules/*"]
+      }
+    },
+    "include": ["src/**/*"],                    // Include all TypeScript files in src/
+    "exclude": ["node_modules", "dist", "**/*.test.ts"] // Exclude test files and build output
+  }
+  
