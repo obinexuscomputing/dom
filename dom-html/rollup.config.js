@@ -27,14 +27,14 @@ const config = [
       typescript({
         tsconfig: './tsconfig.json', // Path to TypeScript config
         declaration: true, // Generate type declarations
-        declarationDir: './dist/types', // Output directory for declarations
+        declarationDir: './dist', // Must align with Rollup output paths
       }),
       isProd && terser(), // Minify in production
     ].filter(Boolean),
   },
   {
-    input: 'dist/types/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }], // Bundle type declarations
+    input: 'dist/index.d.ts', // Adjusted path for type declaration bundling
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
   },
 ];
