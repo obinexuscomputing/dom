@@ -2,12 +2,12 @@
   "name": "@obinexuscomputing/dom-html",
   "version": "1.0.0",
   "main": "index.js",
- "scripts": {
-  "build": "rollup -c",
-  "lint": "eslint src --ext .ts",
-  "test": "jest",
-  "clean": "rm -rf dist"
-},
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint src --ext .ts",
+    "test": "jest",
+    "clean": "rm -rf dist"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
