@@ -2,9 +2,12 @@
   "name": "@obinexuscomputing/dom-html",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ "scripts": {
+  "build": "rollup -c",
+  "lint": "eslint src --ext .ts",
+  "test": "jest",
+  "clean": "rm -rf dist"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
