@@ -7,6 +7,7 @@ import dts from 'rollup-plugin-dts';
 const isProd = process.env.NODE_ENV === 'production';
 
 export default [
+  // JavaScript and ES Module Build
   {
     input: 'src/index.ts',
     output: [
@@ -25,16 +26,19 @@ export default [
       resolve(), // Resolve node_modules
       commonjs(), // Convert CommonJS to ES6
       typescript({
-        tsconfig: './tsconfig.json', // Path to TypeScript config
-        declaration: true, // Generate type declarations
-        declarationDir: './dist/', // Output directory for declarations
+        tsconfig: './tsconfig.json', // Ensure TypeScript is configured properly
       }),
       isProd && terser(), // Minify in production
     ].filter(Boolean),
   },
+
+  // Type Declaration Build
   {
-    input: 'dist/types/index.d.ts', // Adjust input to match the generated declaration
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }], // Bundle type declarations
+    input: 'src/index.ts', // Use the same entry as JavaScript but process only type declarations
+    output: {
+      file: 'dist/index.d.ts',
+      format: 'esm',
+    },
     plugins: [dts()],
   },
 ];
