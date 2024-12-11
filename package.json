@@ -1,11 +1,12 @@
 {
   "name": "@obinexuscomputing/dom",
   "version": "1.0.0",
+  "private": true,
   "description": "DOM utilities for parsing and manipulation",
   "main": "index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc --build",
+    "build": "npm run build -w dom-asm && npm run build -w dom-html && npm run build -w dom-css",
     "test": "jest --coverage",
     "lint": "eslint src --ext .ts,.tsx",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}'",
@@ -36,5 +37,10 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "workspaces": [
+    "dom-asm",
+    "dom-css",
+    "dom-html"
+  ]
 }
