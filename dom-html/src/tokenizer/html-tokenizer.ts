@@ -48,6 +48,9 @@ export class HTMLTokenizer {
 
     return this.tokens;
   }
+  tokenizeDoctype() {
+    throw new Error('Method not implemented.');
+  }
 
   private tokenizeTag() {
     const start = this.position;
@@ -225,7 +228,6 @@ export class HTMLTokenizer {
   }
 
   private tokenizeWhitespace() {
-    const start = this.position;
     while (this.position < this.input.length && /\s/.test(this.peek())) {
       if (this.peek() === '\n') {
         this.line++;
