@@ -1,4 +1,4 @@
-export class HTMLParser {
+export class CSSParser {
     private options: ParserOptions;
   
     constructor(options: ParserOptions = {}) {
@@ -21,7 +21,7 @@ export class HTMLParser {
     }
   
     private tokenize(input: string) {
-      // HTML tokenization implementation
+      // CSS tokenization implementation
     }
   
     private buildAST(tokens: any[]) {
@@ -36,3 +36,4 @@ export class HTMLParser {
       // Source map generation implementation
     }
   }
+  

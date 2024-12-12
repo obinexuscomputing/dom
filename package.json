@@ -12,6 +12,9 @@
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}'",
     "clean": "rm -rf dist"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "keywords": [
     "dom",
     "parser",

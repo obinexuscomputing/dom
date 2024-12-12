@@ -78,8 +78,25 @@ class CLIPPI {
     }
 }
 
-function validateConfig(config) {
-    return config.mode === 'html' || config.mode === 'css';
+class ProgramInterface {
+    async initialize() {
+        this.htmlParser = await import('dom-html');
+        this.cssParser = await import('dom-css');
+    }
+    async parseHTML(input, options = {}) {
+        const parser = new this.htmlParser({
+            optimize: options.optimize,
+            sourceMap: options.sourceMap
+        });
+        return parser.parse(input);
+    }
+    async parseCSS(input, options = {}) {
+        const parser = new this.cssParser({
+            optimize: options.optimize,
+            sourceMap: options.sourceMap
+        });
+        return parser.parse(input);
+    }
 }
 
 class CSSTokenizer {
@@ -106,6 +123,6 @@ exports.HTMLAutomaton = HTMLAutomaton;
 exports.HTMLPPI = HTMLPPI;
 exports.HTMLParser = HTMLParser;
 exports.HTMLTokenizer = HTMLTokenizer;
+exports.ProgramInterface = ProgramInterface;
 exports.StateMinimizer = StateMinimizer;
-exports.validateConfig = validateConfig;
 //# sourceMappingURL=index.js.map

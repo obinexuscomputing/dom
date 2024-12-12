@@ -1,2 +1,7 @@
-import { PPIConfig } from './ppi-types';
-export declare function validateConfig(config: PPIConfig): boolean;
+export declare class ProgramInterface {
+    private htmlParser;
+    private cssParser;
+    initialize(): Promise<void>;
+    parseHTML(input: string, options?: ParserOptions): Promise<ParseResult>;
+    parseCSS(input: string, options?: ParserOptions): Promise<ParseResult>;
+}
