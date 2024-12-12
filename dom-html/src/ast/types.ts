@@ -1,4 +1,5 @@
 export interface ASTNode {
+    tagName: string;
     type: NodeType;
     value?: string;
     children?: ASTNode[];
